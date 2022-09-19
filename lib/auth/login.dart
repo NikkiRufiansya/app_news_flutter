@@ -129,11 +129,12 @@ class _LoginAppState extends State<LoginApp> {
                       margin: EdgeInsets.only(right: 15),
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ForgotPassword()));
+                          print("Klik");
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) =>
+                          //             const ForgotPassword()));
                         },
                         child: Text(
                           "Forgot the password ?",
