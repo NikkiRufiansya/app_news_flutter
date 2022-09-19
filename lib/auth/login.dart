@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 import 'package:kabar/auth/forgot_password.dart';
 
 void main() {
@@ -128,14 +130,10 @@ class _LoginAppState extends State<LoginApp> {
                   Container(
                       margin: EdgeInsets.only(right: 15),
                       child: TextButton(
-                        onPressed: () {
-                          print("Klik");
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) =>
-                          //             const ForgotPassword()));
-                        },
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ForgotPassword())),
                         child: Text(
                           "Forgot the password ?",
                           style: TextStyle(color: Colors.blue),
