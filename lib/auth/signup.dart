@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kabar/auth/forgot_password.dart';
-import 'package:kabar/auth/signup.dart';
-import 'package:kabar/auth/verification.dart';
-import 'package:kabar/helper/colors.dart';
+import 'package:kabar/auth/login.dart';
 
-class LoginApp extends StatefulWidget {
-  const LoginApp({super.key});
+import '../helper/colors.dart';
+import 'forgot_password.dart';
+
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<LoginApp> createState() => _LoginAppState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginAppState extends State<LoginApp> {
+class _SignUpState extends State<SignUp> {
   bool _isObscure = true;
   bool isChecked = false;
   @override
@@ -30,17 +28,7 @@ class _LoginAppState extends State<LoginApp> {
                 alignment: Alignment.topLeft,
                 margin: const EdgeInsets.only(left: 15, top: 80),
                 child: Text(
-                  "Hello",
-                  style: GoogleFonts.poppins(
-                      color: body_text,
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700),
-                )),
-            Container(
-                alignment: Alignment.topLeft,
-                margin: const EdgeInsets.only(left: 15),
-                child: Text(
-                  "Again ! ",
+                  "Hello!",
                   style: GoogleFonts.poppins(
                       color: primary,
                       fontSize: 40,
@@ -50,7 +38,7 @@ class _LoginAppState extends State<LoginApp> {
               margin: const EdgeInsets.only(left: 15, top: 20),
               alignment: Alignment.topLeft,
               child: Text(
-                "Welcome back you've\nbeen missed",
+                "Signup to get Started",
                 style: GoogleFonts.poppins(fontSize: 18, color: body_text),
               ),
             ),
@@ -107,48 +95,31 @@ class _LoginAppState extends State<LoginApp> {
                     )),
               ),
             ),
-            Container(
-              child: Row(
-                children: [
-                  Checkbox(
-                    value: isChecked,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        isChecked = value!;
-                      });
-                    },
-                    checkColor: Colors.blue,
-                  ),
-                  Text("Remember me",
-                      style: GoogleFonts.poppins(color: body_text)),
-                  const Spacer(),
-                  Container(
-                      margin: const EdgeInsets.only(right: 15),
-                      child: TextButton(
-                        onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (builder) => const ForgotPassword())),
-                        child: Text(
-                          "Forgot the password ?",
-                          style: GoogleFonts.poppins(),
-                        ),
-                      ))
-                ],
-              ),
+            Row(
+              children: [
+                Checkbox(
+                  value: isChecked,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      isChecked = value!;
+                    });
+                  },
+                  checkColor: Colors.blue,
+                ),
+                Text("Remember me",
+                    style: GoogleFonts.poppins(color: body_text)),
+              ],
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(15, 10, 15, 0),
               child: ElevatedButton(
                 onPressed: (() {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Verification()));
+                  print("clicked");
                 }),
+                // ignore: sort_child_properties_last
                 child: Text(
-                  "Login",
                   style: GoogleFonts.poppins(),
+                  "Login",
                 ),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: primary,
@@ -233,24 +204,23 @@ class _LoginAppState extends State<LoginApp> {
                     margin: const EdgeInsets.only(top: 20),
                     alignment: Alignment.center,
                     child: Text(
-                      "don’t have an account ?",
+                      "Already heve an account ?",
                       style:
                           GoogleFonts.poppins(color: body_text, fontSize: 15),
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 20),
-                    alignment: Alignment.center,
                     child: GestureDetector(
                       child: Text(
-                        " Sign Up",
+                        " Login",
                         style: GoogleFonts.poppins(color: primary),
                       ),
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SignUp()));
+                                builder: (context) => const LoginApp()));
                       },
                     ),
                   ),
