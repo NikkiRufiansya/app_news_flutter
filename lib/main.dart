@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kabar/auth/login.dart' show LoginApp;
 import 'package:kabar/auth/splashscreen.dart';
+import 'package:kabar/menu/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Menu(),
     );
   }
 }
