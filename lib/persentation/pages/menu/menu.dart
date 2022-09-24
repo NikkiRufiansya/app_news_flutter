@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kabar/helper/colors.dart';
-import 'package:kabar/pages/Profile.dart';
-import 'package:kabar/pages/bookmark.dart';
-import 'package:kabar/pages/explore.dart';
-import 'package:kabar/pages/home.dart';
+import 'package:kabar/utils/colors.dart';
+import 'package:kabar/persentation/pages/Profile.dart';
+import 'package:kabar/persentation/pages/menu/bookmark.dart';
+import 'package:kabar/persentation/pages/menu/explore.dart';
+import 'package:kabar/persentation/pages/menu/home.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});

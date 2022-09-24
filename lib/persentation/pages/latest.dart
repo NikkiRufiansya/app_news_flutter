@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kabar/menu/menu.dart';
-
-import '../helper/colors.dart';
+import 'package:sizer/sizer.dart';
+import '../../utils/colors.dart';
 
 class Lastest extends StatefulWidget {
   const Lastest({super.key});
@@ -97,7 +96,7 @@ Widget _tabSection(BuildContext context) {
             ]),
         SizedBox(
           //Add this to give height
-          height: MediaQuery.of(context).size.height * 0.7,
+          height: MediaQuery.of(context).size.height * 0.76,
           child: TabBarView(children: [
             SizedBox(
               child: ListView.builder(
@@ -105,24 +104,12 @@ Widget _tabSection(BuildContext context) {
                 itemBuilder: (context, index) => TemplateListView(context),
               ),
             ),
-            Container(
-              child: const Text("Articles Body"),
-            ),
-            Container(
-              child: const Text("User Body"),
-            ),
-            Container(
-              child: const Text("User Body"),
-            ),
-            Container(
-              child: const Text("User Body"),
-            ),
-            Container(
-              child: const Text("User Body"),
-            ),
-            Container(
-              child: const Text("User Body"),
-            ),
+            const Text("Sports"),
+            const Text("Politics"),
+            const Text("Bussines"),
+            const Text("Health"),
+            const Text("Travel"),
+            const Text("Science"),
           ]),
         ),
       ],
@@ -130,6 +117,7 @@ Widget _tabSection(BuildContext context) {
   );
 }
 
+// ignore: non_constant_identifier_names
 Container TemplateListView(BuildContext context) {
   return Container(
     alignment: Alignment.topCenter,

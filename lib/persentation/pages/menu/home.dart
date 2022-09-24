@@ -1,7 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kabar/helper/colors.dart';
-import 'package:kabar/pages/latest.dart';
+import 'package:kabar/utils/colors.dart';
+import 'package:kabar/persentation/pages/latest.dart';
+import 'package:kabar/persentation/pages/trending.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -75,95 +77,25 @@ class _HomeState extends State<Home> {
                   const Spacer(),
                   Container(
                     margin: const EdgeInsets.only(right: 15, top: 10),
-                    child: Text(
-                      "See all",
-                      style: GoogleFonts.poppins(
-                          color: body_text,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Trending()));
+                      },
+                      child: Text(
+                        "See all",
+                        style: GoogleFonts.poppins(
+                            color: body_text,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ],
               ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15, 10, 15, 0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      height: 150,
-                      child: Card(
-                        semanticContainer: true,
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        elevation: 5,
-                        child: Image.network(
-                          'https://ichef.bbci.co.uk/news/976/cpsprodpb/AF92/production/_124164944_gettyimages-501782322.jpg',
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 5, top: 5),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Europe",
-                        style: GoogleFonts.poppins(color: body_text),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 5),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Russian warship: Moskva sinks in Black Sea",
-                        style: GoogleFonts.poppins(
-                            color: title_active,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    Row(
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        Container(
-                          margin:
-                              const EdgeInsets.only(left: 5, top: 2, right: 5),
-                          child: const CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/BBC_News.svg/2560px-BBC_News.svg.png"),
-                            maxRadius: 10,
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(right: 10),
-                          child: Text(
-                            "BBC News",
-                            style: GoogleFonts.poppins(
-                                color: body_text,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16),
-                          ),
-                        ),
-                        const Icon(
-                          Icons.timelapse_outlined,
-                          size: 15,
-                          color: body_text,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 2),
-                          child: Text(
-                            "4h ago",
-                            style: GoogleFonts.poppins(
-                                color: body_text, fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              const TemplateTranding(),
               Row(
                 children: [
                   Container(
@@ -273,9 +205,9 @@ class _HomeState extends State<Home> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              elevation: 5,
+              elevation: 0,
               child: Image.network(
-                'https://ichef.bbci.co.uk/news/976/cpsprodpb/AF92/production/_124164944_gettyimages-501782322.jpg',
+                'https://dummyimage.com/600x400/dddddd/fff&text=image',
                 fit: BoxFit.fill,
               ),
             ),
@@ -306,14 +238,15 @@ class _HomeState extends State<Home> {
                     margin: const EdgeInsets.only(top: 2),
                     child: const CircleAvatar(
                       backgroundImage: NetworkImage(
-                          "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/BBC_News.svg/2560px-BBC_News.svg.png"),
+                        'https://dummyimage.com/600x400/dddddd/fff&text=image',
+                      ),
                       maxRadius: 8,
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 5, right: 10),
                     child: Text(
-                      "BBC News",
+                      "Names",
                       style: GoogleFonts.poppins(
                           color: body_text,
                           fontWeight: FontWeight.w600,
@@ -339,6 +272,94 @@ class _HomeState extends State<Home> {
           ),
         )
       ]),
+    );
+  }
+}
+
+class TemplateTranding extends StatelessWidget {
+  const TemplateTranding({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+      child: Column(
+        children: [
+          SizedBox(
+            width: double.infinity,
+            height: 150,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              elevation: 0,
+              child: Image.network(
+                'https://dummyimage.com/600x400/dddddd/fff&text=image',
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 5, top: 5),
+            alignment: Alignment.topLeft,
+            child: Text(
+              "Category",
+              style: GoogleFonts.poppins(color: body_text),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 5),
+            alignment: Alignment.topLeft,
+            child: Text(
+              "description",
+              style: GoogleFonts.poppins(
+                  color: title_active,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400),
+            ),
+          ),
+          Row(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: [
+              Container(
+                margin: const EdgeInsets.only(left: 5, top: 2, right: 5),
+                child: const CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      "https://dummyimage.com/600x400/dddddd/fff&text=image"),
+                  maxRadius: 10,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(right: 10),
+                child: Text(
+                  "names",
+                  style: GoogleFonts.poppins(
+                      color: body_text,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16),
+                ),
+              ),
+              const Icon(
+                Icons.timelapse_outlined,
+                size: 15,
+                color: body_text,
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 2),
+                child: Text(
+                  "4h ago",
+                  style: GoogleFonts.poppins(
+                      color: body_text, fontWeight: FontWeight.w300),
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

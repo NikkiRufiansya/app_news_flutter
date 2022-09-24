@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kabar/helper/colors.dart';
+import 'package:kabar/utils/colors.dart';
 
 class Verification extends StatefulWidget {
   const Verification({super.key});

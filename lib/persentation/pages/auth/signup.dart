@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kabar/auth/login.dart';
+import 'package:kabar/persentation/pages/auth/login.dart';
 
-import '../helper/colors.dart';
+import '../../../utils/colors.dart';
 import 'forgot_password.dart';
 
 class SignUp extends StatefulWidget {

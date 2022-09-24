@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kabar/auth/login.dart';
-import 'package:kabar/helper/colors.dart';
+import 'package:kabar/persentation/pages/auth/login.dart';
+import 'package:kabar/utils/colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

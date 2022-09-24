@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kabar/auth/login.dart' show LoginApp;
-import 'package:kabar/auth/splashscreen.dart';
-import 'package:kabar/menu/menu.dart';
+import 'package:kabar/persentation/pages/auth/login.dart' show LoginApp;
+import 'package:kabar/persentation/pages/auth/splashscreen.dart';
+import 'package:kabar/persentation/pages/menu/menu.dart';
 
 void main() {
   runApp(const MyApp());

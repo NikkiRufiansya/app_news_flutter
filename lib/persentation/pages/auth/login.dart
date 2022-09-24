@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kabar/auth/forgot_password.dart';
-import 'package:kabar/auth/signup.dart';
-import 'package:kabar/auth/verification.dart';
-import 'package:kabar/helper/colors.dart';
+import 'package:kabar/persentation/pages/auth/forgot_password.dart';
+import 'package:kabar/persentation/pages/auth/signup.dart';
+import 'package:kabar/persentation/pages/auth/verification.dart';
+import 'package:kabar/utils/colors.dart';
 
 class LoginApp extends StatefulWidget {
   const LoginApp({super.key});
